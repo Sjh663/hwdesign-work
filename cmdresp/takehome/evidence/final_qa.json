@@ -1,0 +1,18 @@
+{
+  "report_returncode": 0,
+  "stderr": "",
+  "sections": [
+    "Interface",
+    "Design",
+    "Targets",
+    "Verification",
+    "Assumptions",
+    "Open Items",
+    "Run History"
+  ],
+  "exact_seven_sections": true,
+  "missing_evidence": [],
+  "source_hash_mismatches_since_final_build": [],
+  "report_bytes": 15777,
+  "referenced_files": 28
+}

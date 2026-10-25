@@ -1,0 +1,30 @@
+[
+  {
+    "file": "fir_hls/solution1/sim/verilog/fir.performance.result.transaction.xml",
+    "bytes": 1378
+  },
+  {
+    "file": "fir_hls/solution1/sim/verilog/fir.wdb",
+    "bytes": 19954962
+  },
+  {
+    "file": "fir_hls/solution1/sim/report/verilog/result.transaction.rpt",
+    "bytes": 1378
+  },
+  {
+    "file": "fir_hls/solution1/.autopilot/db/cmplx.3.012.fe.performance-array-partition-raw.json",
+    "bytes": 1181
+  },
+  {
+    "file": "fir_hls/solution1/.autopilot/db/cmplx.3.011.fe.performance-parallel.json",
+    "bytes": 1182
+  },
+  {
+    "file": "fir_hls/solution1/.autopilot/db/cmplx.3.010.fe.performance-prep.json",
+    "bytes": 1186
+  },
+  {
+    "file": "fir_hls/solution1/.autopilot/db/cmplx.3.013.fe.performance-final.json",
+    "bytes": 1181
+  }
+]

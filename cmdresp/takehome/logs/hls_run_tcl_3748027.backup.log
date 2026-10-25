@@ -1,0 +1,33 @@
+  **** HLS Build v2026.1 6493734
+Sourcing Tcl script '/home/js15828/hwdesign-work/cmdresp/takehome/run.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset fir_hls 
+WARNING: [HLS 200-2182] The 'fir_hls' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Creating and opening solution '/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls'.
+INFO: [HLS 200-1510] Running: set_top fir 
+INFO: [HLS 200-1510] Running: add_files gen/fir.cpp -cflags -I. -std=c++17 -fno-fast-math -ffp-contract=off 
+INFO: [HLS 200-10] Adding design file 'gen/fir.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb fir_tb.cpp -cflags -I. -std=c++17 -fno-fast-math -ffp-contract=off 
+INFO: [HLS 200-10] Adding test bench file 'fir_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: config_compile -unsafe_math_optimizations false 
+ERROR: [HLS 200-101] config_compile: Unknown option 'false'.
+[1msyn.compile.clang_version[0m=[1msyn.compile.design_size_maximum_warning[0m=[1msyn.compile.enable_auto_rewind[0m=[1msyn.compile.ignore_long_run_time[0m=[1msyn.compile.name_max_length[0m=[1msyn.compile.no_signed_zeros[0m=[1msyn.compile.performance_budgeter[0m=[1msyn.compile.pipeline_flush_in_task[0m=[1msyn.compile.pipeline_loops[0m=[1msyn.compile.pipeline_style[0m=[1msyn.compile.pragma_strict_mode[0m=[1msyn.compile.unsafe_math_optimizations[0m=[1msyn.compile.use_csim_directives[0m=
+
+    invoked from within
+"config_compile -unsafe_math_optimizations false"
+    (file "/home/js15828/hwdesign-work/cmdresp/takehome/run.tcl" line 11)
+    invoked from within
+"source /home/js15828/hwdesign-work/cmdresp/takehome/run.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $tclfile] "
+
+INFO: [HLS 200-112] Total CPU user time: 2.48 seconds. Total CPU system time: 0.44 seconds. Total elapsed time: 2.86 seconds; peak allocated memory: 286.652 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

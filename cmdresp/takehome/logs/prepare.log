@@ -1,0 +1,393 @@
+FIR_PREPARE_JSON_BEGIN
+{
+  "stages": {
+    "started_utc": "2026-10-25T12:38:40.213039+00:00",
+    "stages": {
+      "model": {
+        "returncode": 0,
+        "log": "logs/model.log"
+      },
+      "codegen": {
+        "returncode": 0,
+        "log": "logs/codegen.log"
+      }
+    }
+  },
+  "model": {
+    "seed": 20261024,
+    "float32_arithmetic": "separate multiply then add, ascending k",
+    "scenarios": [
+      {
+        "name": "01_03_basic_state_reconfigure",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 29,
+        "output_words": 12,
+        "consumed_words": 29,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "04_limit_sizes",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 4169,
+        "output_words": 4098,
+        "consumed_words": 4169,
+        "numpy_max_abs_error": 4.3828601067885664e-08,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "05_minimum_taps",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 15,
+        "output_words": 7,
+        "consumed_words": 15,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "06_single_sample",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 13,
+        "output_words": 3,
+        "consumed_words": 13,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "07_empty_activation",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 3,
+        "output_words": 0,
+        "consumed_words": 3,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08a_unknown",
+        "status": [
+          1,
+          1,
+          17
+        ],
+        "input_words": 6,
+        "output_words": 0,
+        "consumed_words": 3,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08a_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08b_no_config",
+        "status": [
+          1,
+          2,
+          22
+        ],
+        "input_words": 8,
+        "output_words": 0,
+        "consumed_words": 3,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08b_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08c_K_zero",
+        "status": [
+          1,
+          3,
+          27
+        ],
+        "input_words": 6,
+        "output_words": 0,
+        "consumed_words": 3,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08c_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08d_K_65",
+        "status": [
+          1,
+          3,
+          32
+        ],
+        "input_words": 7,
+        "output_words": 0,
+        "consumed_words": 3,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08d_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08e_nsamp_zero",
+        "status": [
+          1,
+          4,
+          38
+        ],
+        "input_words": 12,
+        "output_words": 1,
+        "consumed_words": 9,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08e_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08f_nsamp_4097",
+        "status": [
+          1,
+          4,
+          44
+        ],
+        "input_words": 13,
+        "output_words": 1,
+        "consumed_words": 9,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08f_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08g_early_TLAST",
+        "status": [
+          1,
+          5,
+          49
+        ],
+        "input_words": 14,
+        "output_words": 3,
+        "consumed_words": 11,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08g_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08h_missing_TLAST",
+        "status": [
+          1,
+          5,
+          55
+        ],
+        "input_words": 17,
+        "output_words": 5,
+        "consumed_words": 13,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08h_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08i_config_mismatch",
+        "status": [
+          1,
+          5,
+          61
+        ],
+        "input_words": 8,
+        "output_words": 0,
+        "consumed_words": 5,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "08i_recovery",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 16,
+        "output_words": 6,
+        "consumed_words": 16,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "09_all_zero",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 29,
+        "output_words": 19,
+        "consumed_words": 29,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      },
+      {
+        "name": "10_K3_history_reset",
+        "status": [
+          0,
+          0,
+          0
+        ],
+        "input_words": 25,
+        "output_words": 8,
+        "consumed_words": 25,
+        "numpy_max_abs_error": 0.0,
+        "hand_checks": "PASS",
+        "reference_check": "PASS"
+      }
+    ]
+  },
+  "hpp": "// HLS boundary using Waveflow-generated AXI stream types and serializers.\n#ifndef FIR_TOP_HPP\n#define FIR_TOP_HPP\n#include <ap_int.h>\n#include <hls_stream.h>\n#include \"../include/streamutils.h\"\nvoid fir(hls::stream<streamutils::axi4s_word<32>>& s_in,hls::stream<streamutils::axi4s_word<32>>& m_out,ap_uint<1>& halted,ap_uint<8>& error,ap_uint<32>& tx_id);\n#endif\n",
+  "cpp": "// Standard Vitis host-activated adapter; arithmetic/protocol are in fir_body_impl.tpp.\n#include \"fir.hpp\"\n#include \"../fir_body_impl.tpp\"\nvoid fir(hls::stream<streamutils::axi4s_word<32>>& s_in,hls::stream<streamutils::axi4s_word<32>>& m_out,ap_uint<1>& halted,ap_uint<8>& error,ap_uint<32>& tx_id){\n#pragma HLS INTERFACE axis port=s_in\n#pragma HLS INTERFACE axis port=m_out\n#pragma HLS INTERFACE s_axilite port=halted bundle=control\n#pragma HLS INTERFACE s_axilite port=error bundle=control\n#pragma HLS INTERFACE s_axilite port=tx_id bundle=control\n#pragma HLS INTERFACE s_axilite port=return bundle=control\n    fir_impl::body<32,32>(s_in,m_out,halted,error,tx_id);\n}\n",
+  "generated_files": [
+    "include/float32_array_utils.h",
+    "include/fir_cmd_hdr_tb.h",
+    "include/streamutils_tb.h",
+    "include/fir_cmd_hdr.h",
+    "include/fir_resp_hdr.h",
+    "include/fir_resp_hdr_tb.h",
+    "include/float32_array_utils_tb.h",
+    "include/streamutils_hls.h"
+  ]
+}
+
+[10/25/26 08:38:45] INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             ListToolsRequest                                   
+                    INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    
+                    INFO     Processing request of type            server.py:733
+                             CallToolRequest                                    

@@ -1,0 +1,32 @@
+{
+  "build": {
+    "started_utc": "2026-10-25T13:03:24.485757+00:00",
+    "command": [
+      "/eda/xilinx/2026.1/Vitis/bin/vitis-run",
+      "--mode",
+      "hls",
+      "--tcl",
+      "resume.tcl"
+    ],
+    "state": "FAILED",
+    "returncode": 1,
+    "finished_utc": "2026-10-25T13:05:09.829823+00:00"
+  },
+  "model_activations": 25,
+  "csim_rows": 25,
+  "csim_pass": 25,
+  "cosim_rows": 25,
+  "cosim_csv_pass": 25,
+  "cosim_report_pass": false,
+  "clock_ns": 16.1,
+  "resources": {
+    "BRAM_18K": "1",
+    "DSP": "5",
+    "FF": "7548",
+    "LUT": "4110",
+    "URAM": "0"
+  },
+  "loops": [],
+  "cosim_report": "Report time       : Sun Oct 25 09:05:06 AM EDT 2026.\nSolution          : solution1.\nSimulation tool   : xsim.\n\n+----------+----------+-----------------------------------------------+-----------------------------------------------+----------------------+\n|          |          |             Latency(Clock Cycles)             |              Interval(Clock Cycles)           | Total Execution Time |\n+   RTL    +  Status  +-----------------------------------------------+-----------------------------------------------+    (Clock Cycles)    +\n|          |          |      min      |      avg      |      max      |      min      |      avg      |      max      |                      |\n+----------+----------+-----------------------------------------------+-----------------------------------------------+----------------------+\n|      VHDL|        NA|             NA|             NA|             NA|             NA|             NA|             NA|                    NA|\n|   Verilog|      Fail|             NA|             NA|             NA|             NA|             NA|             NA|                    NA|\n+----------+----------+-----------------------------------------------+-----------------------------------------------+----------------------+\n",
+  "timing": {}
+}

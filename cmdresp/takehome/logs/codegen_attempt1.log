@@ -1,0 +1,30 @@
+
+Traceback (most recent call last):
+  File "/home/js15828/hwdesign-work/cmdresp/takehome/fir.py", line 52, in <module>
+    if __name__=='__main__':generate()
+                            ^^^^^^^^^^
+  File "/home/js15828/hwdesign-work/cmdresp/takehome/fir.py", line 49, in generate
+    dag.add(HlsCodegenStep(name='gen_kernel',comp_class=FirAccel,source_artifact='fir_source',output_dir='gen',impl_dir='.'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 10, in __init__
+  File "/home/js15828/hwdesign/.venv/lib/python3.12/site-packages/waveflow/build/hwcodegen_steps.py", line 68, in __post_init__
+    self._hook_info = self._discover_hooks()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/js15828/hwdesign/.venv/lib/python3.12/site-packages/waveflow/build/hwcodegen_steps.py", line 77, in _discover_hooks
+    tree = extract_kernel(comp)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/js15828/hwdesign/.venv/lib/python3.12/site-packages/waveflow/build/hwcodegen.py", line 1916, in extract_kernel
+    tree = HwStmtExtractor(comp, method_name=path.method).extract()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/js15828/hwdesign/.venv/lib/python3.12/site-packages/waveflow/build/hwcodegen.py", line 171, in extract
+    stmts = self._visit_stmts(func_def.body)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/js15828/hwdesign/.venv/lib/python3.12/site-packages/waveflow/build/hwcodegen.py", line 315, in _visit_stmts
+    return [s for s in (self._visit_stmt(n) for n in stmts) if s is not None]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/js15828/hwdesign/.venv/lib/python3.12/site-packages/waveflow/build/hwcodegen.py", line 315, in <genexpr>
+    return [s for s in (self._visit_stmt(n) for n in stmts) if s is not None]
+                        ^^^^^^^^^^^^^^^^^^^
+  File "/home/js15828/hwdesign/.venv/lib/python3.12/site-packages/waveflow/build/hwcodegen.py", line 339, in _visit_stmt
+    raise SynthesisError(
+waveflow.build.hwcodegen.SynthesisError: Non-synthesizable statement Raise at line 8

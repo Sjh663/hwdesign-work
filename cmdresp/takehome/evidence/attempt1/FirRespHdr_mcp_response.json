@@ -1,0 +1,19 @@
+{
+  "meta": null,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": false,\n  \"error_count\": 1,\n  \"warning_count\": 0,\n  \"report_path\": \"/home/js15828/hwdesign-work/cmdresp/takehome/evidence/FirRespHdr_validation.json\",\n  \"summary\": \"Schema validation failed with 1 error.\"\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structuredContent": {
+    "ok": false,
+    "error_count": 1,
+    "warning_count": 0,
+    "report_path": "/home/js15828/hwdesign-work/cmdresp/takehome/evidence/FirRespHdr_validation.json",
+    "summary": "Schema validation failed with 1 error."
+  },
+  "isError": false
+}

@@ -1,0 +1,26 @@
+{
+  "build": {
+    "started_utc": "2026-10-25T12:56:18.356032+00:00",
+    "command": [
+      "/eda/xilinx/2026.1/Vitis/bin/vitis-run",
+      "--mode",
+      "hls",
+      "--tcl",
+      "run.tcl"
+    ],
+    "state": "FAILED",
+    "returncode": 1,
+    "finished_utc": "2026-10-25T12:56:26.541444+00:00"
+  },
+  "model_activations": 25,
+  "csim_rows": 0,
+  "csim_pass": 0,
+  "cosim_rows": 0,
+  "cosim_csv_pass": 0,
+  "cosim_report_pass": false,
+  "clock_ns": null,
+  "resources": {},
+  "loops": [],
+  "cosim_report": "",
+  "timing": {}
+}

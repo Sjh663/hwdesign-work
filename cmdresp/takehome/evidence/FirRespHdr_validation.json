@@ -1,0 +1,28 @@
+{
+  "schema_name": "FirRespHdr",
+  "input_path": "/home/js15828/hwdesign-work/cmdresp/takehome/fir.py",
+  "ok": true,
+  "summary": "Schema is valid with 1 warning.",
+  "errors": [],
+  "warnings": [
+    {
+      "message": "Multiple schema classes were found. schema_info describes the first discovered schema class.",
+      "code": "multiple_schema_classes",
+      "location": {
+        "line": 10,
+        "column": null,
+        "path": "/home/js15828/hwdesign-work/cmdresp/takehome/fir.py"
+      }
+    }
+  ],
+  "schema_info": {
+    "name": "FirCmdHdr",
+    "kind": "DataList",
+    "field_count": 3,
+    "field_names": [
+      "opcode",
+      "tx_id",
+      "count"
+    ]
+  }
+}

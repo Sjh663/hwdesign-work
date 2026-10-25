@@ -1,0 +1,979 @@
+{
+  "ok": true,
+  "method": "Existing VCD;pre-edge valid/ready;exact bits/TLAST alignment;positional framing.",
+  "activation_latency": "Measured separately in cosim reports.",
+  "vcd": "/home/js15828/hwdesign-work/cmdresp/takehome/evidence/cosim_ports.vcd",
+  "clock": {
+    "text": "1 ps",
+    "tick_ns": 0.001,
+    "period_ticks": 10000,
+    "period_ns": 10.0,
+    "rising_edges": 1106377,
+    "unknown_reset_edges_skipped": 0,
+    "signals": {
+      "clock": {
+        "code": "h",
+        "width": 1,
+        "ref": "ap_clk",
+        "path": "/apatb_fir_top/ap_clk"
+      },
+      "reset": {
+        "code": "i",
+        "width": 1,
+        "ref": "ap_rst_n",
+        "path": "/apatb_fir_top/ap_rst_n"
+      },
+      "input": {
+        "TDATA": {
+          "code": "E",
+          "width": 32,
+          "ref": "s_in_TDATA",
+          "path": "/apatb_fir_top/s_in_TDATA"
+        },
+        "TVALID": {
+          "code": "F",
+          "width": 1,
+          "ref": "s_in_TVALID",
+          "path": "/apatb_fir_top/s_in_TVALID"
+        },
+        "TREADY": {
+          "code": "G",
+          "width": 1,
+          "ref": "s_in_TREADY",
+          "path": "/apatb_fir_top/s_in_TREADY"
+        },
+        "TLAST": {
+          "code": "J",
+          "width": 1,
+          "ref": "s_in_TLAST",
+          "path": "/apatb_fir_top/s_in_TLAST"
+        }
+      },
+      "output": {
+        "TDATA": {
+          "code": "K",
+          "width": 32,
+          "ref": "m_out_TDATA",
+          "path": "/apatb_fir_top/m_out_TDATA"
+        },
+        "TVALID": {
+          "code": "L",
+          "width": 1,
+          "ref": "m_out_TVALID",
+          "path": "/apatb_fir_top/m_out_TVALID"
+        },
+        "TREADY": {
+          "code": "M",
+          "width": 1,
+          "ref": "m_out_TREADY",
+          "path": "/apatb_fir_top/m_out_TREADY"
+        },
+        "TLAST": {
+          "code": "P",
+          "width": 1,
+          "ref": "m_out_TLAST",
+          "path": "/apatb_fir_top/m_out_TLAST"
+        }
+      }
+    }
+  },
+  "accepted_input_beats": 4486,
+  "accepted_output_beats": 4211,
+  "alignment": {
+    "ok": true,
+    "expected_input_beats": 4486,
+    "expected_output_beats": 4211,
+    "issues": []
+  },
+  "cases": [
+    {
+      "name": "01_03_basic_state_reconfigure",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 29,
+      "accepted_output_beats": 12,
+      "processes": [
+        {
+          "txid": 2,
+          "sample_count": 4,
+          "input_first_beat_index": 9,
+          "output_first_beat_index": 2,
+          "input_first_cycle": 100,
+          "input_last_cycle": 129,
+          "output_first_cycle": 151,
+          "output_last_cycle": 203,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        },
+        {
+          "txid": 3,
+          "sample_count": 1,
+          "input_first_beat_index": 16,
+          "output_first_beat_index": 7,
+          "input_first_cycle": 208,
+          "input_last_cycle": 208,
+          "output_first_cycle": 236,
+          "output_last_cycle": 236,
+          "first_DATA_latency_cycles": 28,
+          "first_DATA_latency_ticks": 280000,
+          "first_DATA_latency_ns": 280.0,
+          "input_DATA_intervals_cycles": null,
+          "output_DATA_intervals_cycles": null
+        },
+        {
+          "txid": 5,
+          "sample_count": 2,
+          "input_first_beat_index": 24,
+          "output_first_beat_index": 10,
+          "input_first_cycle": 252,
+          "input_last_cycle": 253,
+          "output_first_cycle": 287,
+          "output_last_cycle": 289,
+          "first_DATA_latency_cycles": 35,
+          "first_DATA_latency_ticks": 350000,
+          "first_DATA_latency_ns": 350.0,
+          "input_DATA_intervals_cycles": {
+            "count": 1,
+            "min": 1,
+            "median": 1,
+            "mean": 1,
+            "max": 1,
+            "histogram": {
+              "1": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 1,
+            "min": 2,
+            "median": 2,
+            "mean": 2,
+            "max": 2,
+            "histogram": {
+              "2": 1
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "04_limit_sizes",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 4169,
+      "accepted_output_beats": 4098,
+      "processes": [
+        {
+          "txid": 8,
+          "sample_count": 4096,
+          "input_first_beat_index": 99,
+          "output_first_beat_index": 14,
+          "input_first_cycle": 517,
+          "input_last_cycle": 1101538,
+          "output_first_cycle": 1056,
+          "output_last_cycle": 1102344,
+          "first_DATA_latency_cycles": 539,
+          "first_DATA_latency_ticks": 5390000,
+          "first_DATA_latency_ns": 5390.0,
+          "input_DATA_intervals_cycles": {
+            "count": 4095,
+            "min": 1,
+            "median": 269,
+            "mean": 268.8695970695971,
+            "max": 269,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "269": 4093
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 4095,
+            "min": 2,
+            "median": 269,
+            "mean": 268.9347985347985,
+            "max": 269,
+            "histogram": {
+              "2": 1,
+              "269": 4094
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "05_minimum_taps",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 15,
+      "accepted_output_beats": 7,
+      "processes": [
+        {
+          "txid": 10,
+          "sample_count": 5,
+          "input_first_beat_index": 4205,
+          "output_first_beat_index": 4112,
+          "input_first_cycle": 1102446,
+          "input_last_cycle": 1102484,
+          "output_first_cycle": 1102481,
+          "output_last_cycle": 1102534,
+          "first_DATA_latency_cycles": 35,
+          "first_DATA_latency_ticks": 350000,
+          "first_DATA_latency_ns": 350.0,
+          "input_DATA_intervals_cycles": {
+            "count": 4,
+            "min": 1,
+            "median": 10.0,
+            "mean": 9.5,
+            "max": 17,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "17": 2
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 4,
+            "min": 2,
+            "median": 17.0,
+            "mean": 13.25,
+            "max": 17,
+            "histogram": {
+              "2": 1,
+              "17": 3
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "06_single_sample",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 13,
+      "accepted_output_beats": 3,
+      "processes": [
+        {
+          "txid": 13,
+          "sample_count": 1,
+          "input_first_beat_index": 4222,
+          "output_first_beat_index": 4119,
+          "input_first_cycle": 1102640,
+          "input_last_cycle": 1102640,
+          "output_first_cycle": 1102668,
+          "output_last_cycle": 1102668,
+          "first_DATA_latency_cycles": 28,
+          "first_DATA_latency_ticks": 280000,
+          "first_DATA_latency_ns": 280.0,
+          "input_DATA_intervals_cycles": null,
+          "output_DATA_intervals_cycles": null
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "07_empty_activation",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 3,
+      "accepted_output_beats": 0,
+      "processes": [],
+      "timing_status": "N/A: no PROCESS DATA"
+    },
+    {
+      "name": "08a_unknown",
+      "halted": 1,
+      "error": 1,
+      "status_txid": 17,
+      "accepted_input_beats": 3,
+      "accepted_output_beats": 0,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08a_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 19,
+          "sample_count": 4,
+          "input_first_beat_index": 4241,
+          "output_first_beat_index": 4122,
+          "input_first_cycle": 1102946,
+          "input_last_cycle": 1102975,
+          "output_first_cycle": 1102997,
+          "output_last_cycle": 1103049,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08b_no_config",
+      "halted": 1,
+      "error": 2,
+      "status_txid": 22,
+      "accepted_input_beats": 3,
+      "accepted_output_beats": 0,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08b_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 24,
+          "sample_count": 4,
+          "input_first_beat_index": 4260,
+          "output_first_beat_index": 4128,
+          "input_first_cycle": 1103241,
+          "input_last_cycle": 1103270,
+          "output_first_cycle": 1103292,
+          "output_last_cycle": 1103344,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08c_K_zero",
+      "halted": 1,
+      "error": 3,
+      "status_txid": 27,
+      "accepted_input_beats": 3,
+      "accepted_output_beats": 0,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08c_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 29,
+          "sample_count": 4,
+          "input_first_beat_index": 4279,
+          "output_first_beat_index": 4134,
+          "input_first_cycle": 1103537,
+          "input_last_cycle": 1103566,
+          "output_first_cycle": 1103588,
+          "output_last_cycle": 1103640,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08d_K_65",
+      "halted": 1,
+      "error": 3,
+      "status_txid": 32,
+      "accepted_input_beats": 3,
+      "accepted_output_beats": 0,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08d_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 34,
+          "sample_count": 4,
+          "input_first_beat_index": 4298,
+          "output_first_beat_index": 4140,
+          "input_first_cycle": 1103833,
+          "input_last_cycle": 1103862,
+          "output_first_cycle": 1103884,
+          "output_last_cycle": 1103936,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08e_nsamp_zero",
+      "halted": 1,
+      "error": 4,
+      "status_txid": 38,
+      "accepted_input_beats": 9,
+      "accepted_output_beats": 1,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08e_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 40,
+          "sample_count": 4,
+          "input_first_beat_index": 4323,
+          "output_first_beat_index": 4147,
+          "input_first_cycle": 1104144,
+          "input_last_cycle": 1104173,
+          "output_first_cycle": 1104195,
+          "output_last_cycle": 1104247,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08f_nsamp_4097",
+      "halted": 1,
+      "error": 4,
+      "status_txid": 44,
+      "accepted_input_beats": 9,
+      "accepted_output_beats": 1,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08f_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 46,
+          "sample_count": 4,
+          "input_first_beat_index": 4348,
+          "output_first_beat_index": 4154,
+          "input_first_cycle": 1104455,
+          "input_last_cycle": 1104484,
+          "output_first_cycle": 1104506,
+          "output_last_cycle": 1104558,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08g_early_TLAST",
+      "halted": 1,
+      "error": 5,
+      "status_txid": 49,
+      "accepted_input_beats": 11,
+      "accepted_output_beats": 3,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08g_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 52,
+          "sample_count": 4,
+          "input_first_beat_index": 4375,
+          "output_first_beat_index": 4163,
+          "input_first_cycle": 1104793,
+          "input_last_cycle": 1104822,
+          "output_first_cycle": 1104844,
+          "output_last_cycle": 1104896,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08h_missing_TLAST",
+      "halted": 1,
+      "error": 5,
+      "status_txid": 55,
+      "accepted_input_beats": 13,
+      "accepted_output_beats": 5,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08h_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 58,
+          "sample_count": 4,
+          "input_first_beat_index": 4404,
+          "output_first_beat_index": 4174,
+          "input_first_cycle": 1105181,
+          "input_last_cycle": 1105210,
+          "output_first_cycle": 1105232,
+          "output_last_cycle": 1105284,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "08i_config_mismatch",
+      "halted": 1,
+      "error": 5,
+      "status_txid": 61,
+      "accepted_input_beats": 5,
+      "accepted_output_beats": 0,
+      "processes": [],
+      "timing_status": "N/A: malformed-command activation"
+    },
+    {
+      "name": "08i_recovery",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 16,
+      "accepted_output_beats": 6,
+      "processes": [
+        {
+          "txid": 63,
+          "sample_count": 4,
+          "input_first_beat_index": 4425,
+          "output_first_beat_index": 4180,
+          "input_first_cycle": 1105481,
+          "input_last_cycle": 1105510,
+          "output_first_cycle": 1105532,
+          "output_last_cycle": 1105584,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 1,
+            "median": 3,
+            "mean": 9.666666666666666,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 3,
+            "min": 2,
+            "median": 25,
+            "mean": 17.333333333333332,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 2
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "09_all_zero",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 29,
+      "accepted_output_beats": 19,
+      "processes": [
+        {
+          "txid": 66,
+          "sample_count": 17,
+          "input_first_beat_index": 4441,
+          "output_first_beat_index": 4186,
+          "input_first_cycle": 1105690,
+          "input_last_cycle": 1106044,
+          "output_first_cycle": 1105741,
+          "output_last_cycle": 1106118,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 16,
+            "min": 1,
+            "median": 25.0,
+            "mean": 22.125,
+            "max": 25,
+            "histogram": {
+              "1": 1,
+              "3": 1,
+              "25": 14
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 16,
+            "min": 2,
+            "median": 25.0,
+            "mean": 23.5625,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 15
+            }
+          }
+        }
+      ],
+      "timing_status": "measured"
+    },
+    {
+      "name": "10_K3_history_reset",
+      "halted": 0,
+      "error": 0,
+      "status_txid": 0,
+      "accepted_input_beats": 25,
+      "accepted_output_beats": 8,
+      "processes": [
+        {
+          "txid": 71,
+          "sample_count": 3,
+          "input_first_beat_index": 4470,
+          "output_first_beat_index": 4205,
+          "input_first_cycle": 1106224,
+          "input_last_cycle": 1106228,
+          "output_first_cycle": 1106275,
+          "output_last_cycle": 1106302,
+          "first_DATA_latency_cycles": 51,
+          "first_DATA_latency_ticks": 510000,
+          "first_DATA_latency_ns": 510.0,
+          "input_DATA_intervals_cycles": {
+            "count": 2,
+            "min": 1,
+            "median": 2.0,
+            "mean": 2,
+            "max": 3,
+            "histogram": {
+              "1": 1,
+              "3": 1
+            }
+          },
+          "output_DATA_intervals_cycles": {
+            "count": 2,
+            "min": 2,
+            "median": 13.5,
+            "mean": 13.5,
+            "max": 25,
+            "histogram": {
+              "2": 1,
+              "25": 1
+            }
+          }
+        },
+        {
+          "txid": 69,
+          "sample_count": 1,
+          "input_first_beat_index": 4482,
+          "output_first_beat_index": 4210,
+          "input_first_cycle": 1106322,
+          "input_last_cycle": 1106322,
+          "output_first_cycle": 1106350,
+          "output_last_cycle": 1106350,
+          "first_DATA_latency_cycles": 28,
+          "first_DATA_latency_ticks": 280000,
+          "first_DATA_latency_ns": 280.0,
+          "input_DATA_intervals_cycles": null,
+          "output_DATA_intervals_cycles": null
+        }
+      ],
+      "timing_status": "measured"
+    }
+  ],
+  "max_size": {
+    "sample_count": 4096,
+    "commands": [
+      {
+        "case": "04_limit_sizes",
+        "txid": 8,
+        "sample_count": 4096,
+        "input_first_beat_index": 99,
+        "output_first_beat_index": 14,
+        "input_first_cycle": 517,
+        "input_last_cycle": 1101538,
+        "output_first_cycle": 1056,
+        "output_last_cycle": 1102344,
+        "first_DATA_latency_cycles": 539,
+        "first_DATA_latency_ticks": 5390000,
+        "first_DATA_latency_ns": 5390.0,
+        "input_DATA_intervals_cycles": {
+          "count": 4095,
+          "min": 1,
+          "median": 269,
+          "mean": 268.8695970695971,
+          "max": 269,
+          "histogram": {
+            "1": 1,
+            "3": 1,
+            "269": 4093
+          }
+        },
+        "output_DATA_intervals_cycles": {
+          "count": 4095,
+          "min": 2,
+          "median": 269,
+          "mean": 268.9347985347985,
+          "max": 269,
+          "histogram": {
+            "2": 1,
+            "269": 4094
+          }
+        }
+      }
+    ],
+    "interval_definition": "Consecutive accepted DATA spacings within PROCESS;framing excluded."
+  }
+}

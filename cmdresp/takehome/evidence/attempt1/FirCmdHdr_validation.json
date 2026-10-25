@@ -1,0 +1,19 @@
+{
+  "schema_name": "FirCmdHdr",
+  "input_path": "/home/js15828/hwdesign-work/cmdresp/takehome/fir.py",
+  "ok": false,
+  "summary": "Schema validation failed with 1 error.",
+  "errors": [
+    {
+      "message": "name '__file__' is not defined",
+      "code": "execution_error",
+      "location": {
+        "line": 8,
+        "column": null,
+        "path": "/home/js15828/hwdesign-work/cmdresp/takehome/fir.py"
+      }
+    }
+  ],
+  "warnings": [],
+  "schema_info": null
+}

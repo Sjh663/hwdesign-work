@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-10-25T13:03:24.485757+00:00",
+  "command": [
+    "/eda/xilinx/2026.1/Vitis/bin/vitis-run",
+    "--mode",
+    "hls",
+    "--tcl",
+    "resume.tcl"
+  ],
+  "state": "FAILED",
+  "returncode": 1,
+  "finished_utc": "2026-10-25T13:05:09.829823+00:00"
+}

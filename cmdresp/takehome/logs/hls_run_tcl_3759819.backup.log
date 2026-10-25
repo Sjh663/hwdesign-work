@@ -1,0 +1,632 @@
+  **** HLS Build v2026.1 6493734
+Sourcing Tcl script '/home/js15828/hwdesign-work/cmdresp/takehome/resume.tcl'
+INFO: [HLS 200-1510] Running: open_project fir_hls 
+WARNING: [HLS 200-2182] The 'fir_hls' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+INFO: [HLS 200-10] Opening solution '/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls'.
+INFO: [HLS 200-1510] Running: open_solution solution1 
+INFO: [HLS 200-10] Opening solution '/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.98 seconds. CPU system time: 0.14 seconds. Elapsed time: 1.21 seconds; current allocated memory: 286.105 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file 'gen/fir.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.97 seconds. CPU system time: 1 seconds. Elapsed time: 8.41 seconds; current allocated memory: 290.707 MB.
+INFO: [HLS 200-1995] There were 3,358 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'float32_array_utils::read_axi4_stream_elem_impl<32>::run(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, streamutils::tlast_status&, int)' into 'void float32_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, int, streamutils::tlast_status&)' (./include/float32_array_utils.h:263:5)
+INFO: [HLS 214-131] Inlining function 'float32_array_utils::write_axi4_stream_elem_impl<32>::run(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float const*, bool, int)' into 'void float32_array_utils::write_axi4_stream_lane<32>(float const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool, int)' (./include/float32_array_utils.h:276:5)
+INFO: [HLS 214-131] Inlining function 'void float32_array_utils::write_axi4_stream_lane<32>(float const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool, int)' into 'void fir_impl::body<32, 32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/../fir_body_impl.tpp:88:52)
+INFO: [HLS 214-131] Inlining function 'fir_impl::fail(unsigned int, ap_uint<32>, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' into 'void fir_impl::body<32, 32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/../fir_body_impl.tpp:43:33)
+INFO: [HLS 214-131] Inlining function 'void float32_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, int, streamutils::tlast_status&)' into 'void fir_impl::body<32, 32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/../fir_body_impl.tpp:52:17)
+INFO: [HLS 214-131] Inlining function 'void fir_impl::body<32, 32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' into 'fir(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/fir.cpp:11:5)
+INFO: [HLS 214-186] Unrolling loop 'shift_history' (gen/../fir_body_impl.tpp:80:15) in function 'fir' completely with a factor of 62 (gen/fir.cpp:4:0)
+INFO: [HLS 214-186] Unrolling loop 'clear_history' (gen/../fir_body_impl.tpp:57:15) in function 'fir' completely with a factor of 63 (gen/fir.cpp:4:0)
+INFO: [HLS 214-186] Unrolling loop 'init_history' (gen/../fir_body_impl.tpp:36:14) in function 'fir' completely with a factor of 63 (gen/fir.cpp:4:0)
+INFO: [HLS 200-1995] There were 1,311 instructions in the design after the 'Unroll/Inline' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 955 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-178] Inlining function 'FirCmdHdr::read_axi4_stream_impl(FirCmdHdr::word_bw_tag<32>, FirCmdHdr*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void FirCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (./include/fir_cmd_hdr.h:222:0)
+INFO: [HLS 214-178] Inlining function 'void FirCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void FirCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (./include/fir_cmd_hdr.h:227:0)
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'FirRespHdr::write_axi4_stream_impl(FirRespHdr::word_bw_tag<32>, FirRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) (.56)' (./include/fir_resp_hdr.h:91:0)
+INFO: [HLS 214-178] Inlining function 'FirRespHdr::write_axi4_stream_impl(FirRespHdr::word_bw_tag<32>, FirRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) (.56)' into 'void FirRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' (./include/fir_resp_hdr.h:99:0)
+INFO: [HLS 214-178] Inlining function 'streamutils::uint_to_float(unsigned int)' into 'fir(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/fir.cpp:4:0)
+INFO: [HLS 214-178] Inlining function 'void FirRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'fir(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/fir.cpp:4:0)
+INFO: [HLS 214-178] Inlining function 'streamutils::float_to_uint(float)' into 'fir(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/fir.cpp:4:0)
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'fir(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<32>&)' (gen/fir.cpp:4:0)
+INFO: [HLS 200-1995] There were 1,005 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 761 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-248] Applying array_partition to 'history.i': Complete partitioning on dimension 1. (gen/../fir_body_impl.tpp:29:20)
+INFO: [HLS 200-1995] There were 984 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 604 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 604 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 604 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 969 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 960 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-376] Pipelining loop< config_taps> at gen/../fir_body_impl.tpp:49:13 due to pipeline_loops threshold
+INFO: [HLS 200-1995] There were 788 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 646 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 646 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 563 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 446 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.31 seconds. CPU system time: 0.64 seconds. Elapsed time: 9.02 seconds; current allocated memory: 301.109 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 301.109 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 302.168 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 303.355 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (gen/../fir_body_impl.tpp:76:1) to (gen/../fir_body_impl.tpp:75:10) in function 'fir'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 326.863 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.16 seconds; current allocated memory: 376.883 MB.
+INFO: [HLS 200-2255] Checking Wire Delay Status: Wire Delay Mode is ON
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fir' ...
+WARNING: [SYN 201-103] Legalizing function name 'read_axi4_stream<32>' to 'read_axi4_stream_32_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_Pipeline_init_taps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'init_taps'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'init_taps'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.12 seconds; current allocated memory: 376.883 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 376.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_axi4_stream_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 376.883 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 376.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_Pipeline_config_taps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'config_taps'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 2, loop 'config_taps'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 376.883 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 376.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fp32_mul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'fp32_mul'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, function 'fp32_mul'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 376.883 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 376.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fp32_add' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'fp32_add'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, function 'fp32_add'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 376.883 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 376.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir_Pipeline_tap_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'tap_loop'.
+WARNING: [HLS 200-880] The II Violation in module 'fir_Pipeline_tap_loop' (loop 'tap_loop'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_write_ln74', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11) of variable 'sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11 32 bit on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11 and 'load' operation 32 bit ('sum_load_1', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11) on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11.
+Resolution: For help on HLS 200-880 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'fir_Pipeline_tap_loop' (loop 'tap_loop'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_write_ln74', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11) of variable 'sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11 32 bit on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11 and 'load' operation 32 bit ('sum_load_1', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11) on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11.
+Resolution: For help on HLS 200-880 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'fir_Pipeline_tap_loop' (loop 'tap_loop'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('sum_write_ln74', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11) of variable 'sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11 32 bit on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11 and 'load' operation 32 bit ('sum_load_1', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11) on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11.
+Resolution: For help on HLS 200-880 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-887] Cannot meet target clock period from 'call' operation 32 bit ('sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11) to 'fp32_add' to 'store' operation ('sum_write_ln74', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11) of variable 'sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11 32 bit on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11 (combination delay: 8.844 ns) to honor II or Latency constraint in region 'tap_loop'.
+Resolution: For help on HLS 200-887 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-887.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 12, loop 'tap_loop'
+WARNING: [HLS 200-871] Estimated clock period (16.100 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'fir_Pipeline_tap_loop' consists of the following:
+	'call' operation 32 bit ('sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11) to 'fp32_add' [156]  (7.256 ns)
+	'store' operation ('sum_write_ln74', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11) of variable 'sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11 32 bit on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11 [158]  (1.588 ns)
+	'load' operation 32 bit ('sum_load_1', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11) on local variable 'sum', gen/../fir_body_impl.tpp:74->gen/fir.cpp:11 [144]  (0.000 ns)
+	'call' operation 32 bit ('sum', gen/../fir_body_impl.tpp:78->gen/fir.cpp:11) to 'fp32_add' [156]  (7.256 ns)
+
+Resolution: For help on HLS 200-1016 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 377.676 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 377.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 384.074 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 384.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_Pipeline_init_taps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_Pipeline_init_taps'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 384.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_axi4_stream_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_axi4_stream_32_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 384.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_Pipeline_config_taps' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_Pipeline_config_taps'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 384.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fp32_mul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fp32_mul'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 384.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fp32_add' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fp32_add' pipeline 'fp32_add' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fp32_add'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.11 seconds; current allocated memory: 384.074 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir_Pipeline_tap_loop' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'fir_Pipeline_tap_loop' pipeline 'tap_loop' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_127_6_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir_Pipeline_tap_loop'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 384.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fir' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/s_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/m_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/halted' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/error' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fir/tx_id' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fir' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'halted', 'error', 'tx_id' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fir'.
+INFO: [RTMG 210-278] Implementing memory 'fir_taps_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.24 seconds; current allocated memory: 388.648 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.61 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.96 seconds; current allocated memory: 401.691 MB.
+INFO: [HLS 200-2225] Wrote inferred directives to file /home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.07 seconds. CPU system time: 0.11 seconds. Elapsed time: 1.3 seconds; current allocated memory: 405.102 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fir.
+INFO: [VLOG 209-307] Generating Verilog RTL for fir.
+INFO: [HLS 200-790] **** Loop Constraint Status: Not all loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 62.11 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:22; Allocated memory: 118.996 MB.
+FIR_SYNTHESIS_COMPLETE
+INFO: [HLS 200-1510] Running: cosim_design -argv /home/js15828/hwdesign-work/cmdresp/takehome/vectors cosim -trace_level port 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/eda/xilinx/2026.1/Vitis/lnx64/tools/clang-16/bin/clang++"
+   Compiling apatb_fir.cpp
+   Compiling apatb_fir_util.cpp
+   Compiling fir.cpp_pre.cpp
+   Compiling fir_tb.cpp_pre.cpp
+   Compiling apatb_fir_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+cosim 01_03_basic_state_reconfigure PASS outputs=12/12 consumed=29/29 status=0:0:0
+cosim 04_limit_sizes PASS outputs=4098/4098 consumed=4169/4169 status=0:0:0
+cosim 05_minimum_taps PASS outputs=7/7 consumed=15/15 status=0:0:0
+cosim 06_single_sample PASS outputs=3/3 consumed=13/13 status=0:0:0
+cosim 07_empty_activation PASS outputs=0/0 consumed=3/3 status=0:0:0
+cosim 08a_unknown PASS outputs=0/0 consumed=3/3 status=1:1:17
+cosim 08a_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08b_no_config PASS outputs=0/0 consumed=3/3 status=1:2:22
+cosim 08b_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08c_K_zero PASS outputs=0/0 consumed=3/3 status=1:3:27
+cosim 08c_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08d_K_65 PASS outputs=0/0 consumed=3/3 status=1:3:32
+cosim 08d_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08e_nsamp_zero PASS outputs=1/1 consumed=9/9 status=1:4:38
+cosim 08e_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08f_nsamp_4097 PASS outputs=1/1 consumed=9/9 status=1:4:44
+cosim 08f_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08g_early_TLAST PASS outputs=3/3 consumed=11/11 status=1:5:49
+cosim 08g_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08h_missing_TLAST PASS outputs=5/5 consumed=13/13 status=1:5:55
+cosim 08h_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 08i_config_mismatch PASS outputs=0/0 consumed=5/5 status=1:5:61
+cosim 08i_recovery PASS outputs=6/6 consumed=16/16 status=0:0:0
+cosim 09_all_zero PASS outputs=19/19 consumed=29/29 status=0:0:0
+cosim 10_K3_history_reset PASS outputs=8/8 consumed=25/25 status=0:0:0
+cosim: 25 activations, 0 failures
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 4169
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+find not read role field
+find not read role field
+find not read role field
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 31-jul-2027.
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sun Oct 25 09:04:13 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_vivado_gen_ip.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/eda/xilinx/2026.1/data/ip'.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fir_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fir_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'fir_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'fir_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 25 09:04:25 2026...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /eda/xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_fir_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj fir.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_22 -L floating_point_v7_0_27 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./svtb -i ./file_agent -i ./fir_subsystem -s fir -debug all 
+Multi-threading is on. Using 126 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_regslice_both
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_read_axi4_stream_32_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_read_axi4_stream_32_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_taps_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_taps_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_fir_Pipeline_tap_loop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fir_Pipeline_tap_loop
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_fp32_add.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fp32_add
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_fir_Pipeline_config_taps.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fir_Pipeline_config_taps
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_fmul_32ns_32ns_32_4_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fmul_32ns_32ns_32_4_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_fir_Pipeline_init_taps.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fir_Pipeline_init_taps
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_sparsemux_127_6_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_sparsemux_127_6_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_fadd_32ns_32ns_32_5_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fadd_32ns_32ns_32_5_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_fir_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_fp32_mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_fp32_mul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/svr/svr_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/svr/svr_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/fir_subsystem/fir_subsystem_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sv_module_top
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/ip/xil_defaultlib/fir_fadd_32ns_32ns_32_5_full_dsp_1_ip.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fir_fadd_32ns_32ns_32_5_full_dsp_1_ip'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/js15828/hwdesign-work/cmdresp/takehome/fir_hls/solution1/sim/verilog/ip/xil_defaultlib/fir_fmul_32ns_32ns_32_4_max_dsp_1_ip.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'fir_fmul_32ns_32ns_32_4_max_dsp_1_ip'
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_viv_comp
+Compiling package xbip_utils_v3_0_16.xbip_utils_v3_0_16_pkg
+Compiling package axi_utils_v2_0_12.axi_utils_v2_0_12_pkg
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_consts
+Compiling package ieee.math_real
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_exp_table...
+Compiling package mult_gen_v12_0_25.mult_gen_v12_0_25_pkg
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_pkg
+Compiling package floating_point_v7_1_22.flt_utils
+Compiling package unisim.vcomponents
+Compiling package xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv_comp
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.svr_pkg
+Compiling package xil_defaultlib.file_agent_pkg
+Compiling package xil_defaultlib.axi_pkg
+Compiling package xil_defaultlib.fir_subsystem_pkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.fir_taps_RAM_AUTO_1R1W
+Compiling module xil_defaultlib.fir_flow_control_loop_pipe_seque...
+Compiling module xil_defaultlib.fir_fir_Pipeline_init_taps
+Compiling module xil_defaultlib.fir_read_axi4_stream_32_s
+Compiling module xil_defaultlib.fir_fir_Pipeline_config_taps
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=7,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=16,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=24,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=17,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=25,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=48,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_22.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.fix_mult [\fix_mult(c_xdevicefamily="zynq"...]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=32,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture rtl of entity floating_point_v7_1_22.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="z...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=18,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_22.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult [\flt_mult(c_xdevicefamily="zynq"...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+Compiling architecture fir_fmul_32ns_32ns_32_4_max_dsp_1_ip_arch of entity xil_defaultlib.fir_fmul_32ns_32ns_32_4_max_dsp_1_ip [fir_fmul_32ns_32ns_32_4_max_dsp_...]
+Compiling module xil_defaultlib.fir_fmul_32ns_32ns_32_4_max_dsp_...
+Compiling module xil_defaultlib.fir_fp32_mul
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=24,length=0,fast_in...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xc7z020...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=13,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity floating_point_v7_1_22.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=5,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=3,length=0)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,ca...]
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_22.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=9,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=10)\]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_22.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare_gt [\compare_gt(c_xdevicefamily="zyn...]
+Compiling architecture synth of entity floating_point_v7_1_22.compare [\compare(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,length=2,fast_inp...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=2,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=12,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=23)\]
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="zy...]
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add [\flt_add(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+Compiling architecture fir_fadd_32ns_32ns_32_5_full_dsp_1_ip_arch of entity xil_defaultlib.fir_fadd_32ns_32ns_32_5_full_dsp_1_ip [fir_fadd_32ns_32ns_32_5_full_dsp...]
+Compiling module xil_defaultlib.fir_fadd_32ns_32ns_32_5_full_dsp...
+Compiling module xil_defaultlib.fir_fp32_add
+Compiling module xil_defaultlib.fir_sparsemux_127_6_32_1_1(din0_...
+Compiling module xil_defaultlib.fir_fir_Pipeline_tap_loop
+Compiling module xil_defaultlib.fir_control_s_axi
+Compiling module xil_defaultlib.fir_regslice_both(DataWidth=32)
+Compiling module xil_defaultlib.fir_regslice_both(DataWidth=4)
+Compiling module xil_defaultlib.fir_regslice_both(DataWidth=1)
+Compiling module xil_defaultlib.fir
+Compiling module xil_defaultlib.misc_interface_default
+Compiling module xil_defaultlib.svr_if(DATA_WIDTH=41)
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=6,STRB_WIDTH=4...
+Compiling module xil_defaultlib.sv_module_top
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=18)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.upc_loop_intf_default
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=4)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_fir_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot fir
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sun Oct 25 09:05:01 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/fir/xsim_script.tcl
+# xsim {fir} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=fir_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -view {{fir_dataflow_ana.wcfg}} -tclbatch {fir.tcl} -protoinst {fir.protoinst}
+INFO: [Wavedata 42-565] Reading protoinst file fir.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_fir_top/AESL_inst_fir//AESL_inst_fir_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_fir_top/AESL_inst_fir/grp_fir_Pipeline_config_taps_fu_1998/grp_fir_Pipeline_config_taps_fu_1998_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_fir_top/AESL_inst_fir/grp_fir_Pipeline_init_taps_fu_1978/grp_fir_Pipeline_init_taps_fu_1978_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_fir_top/AESL_inst_fir/grp_fir_Pipeline_tap_loop_fu_2013/grp_fir_Pipeline_tap_loop_fu_2013_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_fir_top/AESL_inst_fir/grp_fir_Pipeline_tap_loop_fu_2013/grp_fp32_add_fu_724/grp_fp32_add_fu_724_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_fir_top/AESL_inst_fir/grp_read_axi4_stream_32_s_fu_1984/grp_read_axi4_stream_32_s_fu_1984_activity
+Time resolution is 1 ps
+open_wave_config fir_dataflow_ana.wcfg
+source fir.tcl
+## log_wave [get_objects -filter {type == in_port || type == out_port || type == inout_port || type == port} /apatb_fir_top/AESL_inst_fir/*]
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set return_group [add_wave_group return(axis) -into $coutputgroup]
+## add_wave /apatb_fir_top/AESL_inst_fir/m_out_TLAST -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/m_out_TSTRB -into $return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/m_out_TKEEP -into $return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/m_out_TREADY -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/m_out_TVALID -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/m_out_TDATA -into $return_group -radix hex
+## set halted__error__tx_id__return_group [add_wave_group halted__error__tx_id__return(axi_slave) -into $coutputgroup]
+## add_wave /apatb_fir_top/AESL_inst_fir/interrupt -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_BRESP -into $halted__error__tx_id__return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_BREADY -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_BVALID -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_RRESP -into $halted__error__tx_id__return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_RDATA -into $halted__error__tx_id__return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_RREADY -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_RVALID -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_ARREADY -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_ARVALID -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_ARADDR -into $halted__error__tx_id__return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_WSTRB -into $halted__error__tx_id__return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_WDATA -into $halted__error__tx_id__return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_WREADY -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_WVALID -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_AWREADY -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_AWVALID -into $halted__error__tx_id__return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_axi_control_AWADDR -into $halted__error__tx_id__return_group -radix hex
+## set cinputgroup [add_wave_group "C Inputs" -into $designtopgroup]
+## set return_group [add_wave_group return(axis) -into $cinputgroup]
+## add_wave /apatb_fir_top/AESL_inst_fir/s_in_TLAST -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_in_TSTRB -into $return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_in_TKEEP -into $return_group -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_in_TREADY -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_in_TVALID -into $return_group -color #ffff00 -radix hex
+## add_wave /apatb_fir_top/AESL_inst_fir/s_in_TDATA -into $return_group -radix hex
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_fir_top/AESL_inst_fir/ap_rst_n -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_fir_top/AESL_inst_fir/ap_clk -into $clockgroup
+## save_wave_config fir.wcfg
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+## set fir_timing_ports [get_objects -filter { type == port } /apatb_fir_top/AESL_inst_fir/*]
+## puts "FIR_TIMING_PORTS: $fir_timing_ports"
+FIR_TIMING_PORTS: 
+## if {[llength $fir_timing_ports] == 0} { error "FIR: no DUT ports selected for VCD" }
+FIR: no DUT ports selected for VCD
+    while executing
+"error "FIR: no DUT ports selected for VCD" "
+    invoked from within
+"if {[llength $fir_timing_ports] == 0} { error "FIR: no DUT ports selected for VCD" }"
+    (file "fir.tcl" line 47)
+INFO: xsimkernel Simulation Memory Usage: 554080 KB (Peak: 608644 KB), Simulation CPU Usage: 1980 ms
+INFO: [Common 17-206] Exiting xsim at Sun Oct 25 09:05:06 2026...
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:12; Allocated memory: 12.590 MB.
+FIR_COSIM_FAILED: 
+INFO: [HLS 200-112] Total CPU user time: 232.81 seconds. Total CPU system time: 14.08 seconds. Total elapsed time: 97.6 seconds; peak allocated memory: 417.691 MB.
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.
