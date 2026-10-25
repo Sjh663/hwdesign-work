@@ -65,6 +65,9 @@ Throughput and clock targets:
 
 A missed target is reported honestly as FAIL in `results.md`. Do not rework
 the kernel to close timing, and do not build a timing model in Python.
+Characterization covers finite float32 values and zeros only; NaN, infinity,
+and subnormal inputs are not part of the required scenarios. No target is
+set for the inner tap-loop II; it is reported as measured only.
 
 ## Commands and parameters
 
@@ -232,6 +235,10 @@ this folder to be committed: a reviewer opens them to check results.md.
 
 ## Revision history
 
+
 | Version | Change | Why |
 | --- | --- | --- |
 | 1 | First version |  |
+
+| 2 | Scope characterization to finite values; clarify inner-loop II has no target | Iteration review of results.md v1: NaN/Inf/subnormal was listed as open; inner II=4 was shown against a target the prompt never set |
+
